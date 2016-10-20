@@ -3,7 +3,7 @@
 CardsRecyclerView is very easy to use Android ReycleView to create custom card items.
 With this Class you can create in very easy way Recycle view for Android Applications.
 
-![alt text](https://github.com/meni432/CardsRecyclerView/blob/master/cardrecycle.gif "Example GIF")
+![alt text](https://github.com/meni432/CardRecyclerView/blob/master/cardrecycle.gif "Example GIF")
 
 **Gradle soon!**
 
