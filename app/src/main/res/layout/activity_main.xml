@@ -18,7 +18,7 @@
         android:textSize="24sp"
         android:textStyle="normal|bold" />
 
-    <com.menisamet.cardsrecycleview.CardsRecyclerView
+    <com.menisamet.cardrecyclerview.CardsRecyclerView
         android:id="@+id/recycle_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,5 +26,5 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView"
         android:background="@android:color/transparent">
-    </com.menisamet.cardsrecycleview.CardsRecyclerView>
+    </com.menisamet.cardrecyclerview.CardsRecyclerView>
 </RelativeLayout>

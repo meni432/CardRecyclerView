@@ -39,6 +39,7 @@ public class CardsRecyclerView extends RecyclerView {
     private Context mContext;
 
     CardClickListener mCardClickListener;
+    CardLongClickListener mCardLongClickListener;
 
     private Random mRandom = new Random();
 
@@ -65,14 +66,20 @@ public class CardsRecyclerView extends RecyclerView {
 
         this.mContext = context;
         updateLayoutManager(DEFAULT_NUMBER_LINES, DEFAULT_ORIENTATION);
-        super.addOnItemTouchListener(new RecyclerItemClickListener(mContext, new RecyclerItemClickListener.OnItemClickListener() {
+        RecyclerItemClickListener listener = new RecyclerItemClickListener(mContext);
+        listener.setOnClickListener(new RecyclerItemClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                if (mCardClickListener !=null){
-                    mCardClickListener.onCardClick(view, position);
-                }
+                mCardClickListener.onCardClick(view, position);
             }
-        }));
+        });
+        listener.setOnLongClickListener(new RecyclerItemClickListener.OnItemLongCLickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                mCardLongClickListener.onCardLongCLick(view, position);
+            }
+        });
+        super.addOnItemTouchListener(listener);
     }
 
     private void updateLayoutManager(int numberOfLines, int orientation){
@@ -103,6 +110,10 @@ public class CardsRecyclerView extends RecyclerView {
 
     public void setCardClickListener(CardClickListener cardClickListener) {
         this.mCardClickListener = cardClickListener;
+    }
+
+    public void setCardLongClickListener(CardLongClickListener cardLongClickListener) {
+        this.mCardLongClickListener = cardLongClickListener;
     }
 
     public static class RecycleViewCardAdapter extends RecyclerView.Adapter<RecycleViewCardAdapter.CardViewHolder> {
@@ -195,6 +206,10 @@ public class CardsRecyclerView extends RecyclerView {
 
     interface CardClickListener {
         public void onCardClick(View view, int position);
+    }
+
+    interface CardLongClickListener{
+        public void onCardLongCLick(View view, int position);
     }
 
     public interface CardElement {

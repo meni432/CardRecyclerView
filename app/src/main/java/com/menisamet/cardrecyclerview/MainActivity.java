@@ -3,6 +3,7 @@ package com.menisamet.cardrecyclerview;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -35,6 +36,12 @@ public class MainActivity extends AppCompatActivity {
             public void onCardClick(View view, int position) {
                 list.remove(position);
                 mRAdapter.notifyItemRemoved(position);
+            }
+        });
+        mRecyclerView.setCardLongClickListener(new CardsRecyclerView.CardLongClickListener() {
+            @Override
+            public void onCardLongCLick(View view, int position) {
+                Log.d(TAG, "long click event");
             }
         });
 
