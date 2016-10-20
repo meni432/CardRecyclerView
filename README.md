@@ -1,7 +1,7 @@
 # CardsRecyclerView
-## Cards Recycle View
+## Cards Recycler View
 CardsRecyclerView is very easy to use Android ReycleView to create custom card items.
-With this Class you can create in very easy way Recycle view for Android Applications.
+With this Class you can create in very easy way Recycler view for Android Applications.
 
 ![alt text](https://github.com/meni432/CardRecyclerView/blob/master/cardrecycle.gif "Example GIF")
 
@@ -22,7 +22,7 @@ With this Class you can create in very easy way Recycle view for Android Applica
 
 #### Step 2: Add relevant classes to your project
 
-### Step 3: In your layout add RecycleView Componnent
+### Step 3: In your layout add RecyclerView Componnent
 ```xml
     <com.menisamet.cardrecyclerview.CardsRecyclerView
         android:id="@+id/recycle_view"
@@ -34,7 +34,7 @@ With this Class you can create in very easy way Recycle view for Android Applica
         android:background="@android:color/transparent">
     </com.menisamet.cardrecyclerview.CardsRecyclerView>
 ```
-this is standart Recycle View
+this is standart Recycler View
 
 #### Step 4: This is a sample code for using with this Class
 ```Java
