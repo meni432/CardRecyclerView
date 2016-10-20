@@ -116,9 +116,9 @@ public class CardsRecyclerView extends RecyclerView {
         this.mCardLongClickListener = cardLongClickListener;
     }
 
-    public static class RecycleViewCardAdapter extends RecyclerView.Adapter<RecycleViewCardAdapter.CardViewHolder> {
+    public static class RecycleViewCardAdapter<T extends CardElement> extends RecyclerView.Adapter<RecycleViewCardAdapter.CardViewHolder> {
 
-        private List<CardElement> elementList;
+        private List<T> elementList;
 
 
         /**
@@ -134,7 +134,7 @@ public class CardsRecyclerView extends RecyclerView {
          */
         private int cardGlobalColor;
 
-        public RecycleViewCardAdapter(List<CardElement> elementList) {
+        public RecycleViewCardAdapter(List<T> elementList) {
             this.elementList = elementList;
         }
 
@@ -184,7 +184,7 @@ public class CardsRecyclerView extends RecyclerView {
             return elementList.size();
         }
 
-        public class CardViewHolder extends RecyclerView.ViewHolder {
+        public static class CardViewHolder extends RecyclerView.ViewHolder {
             protected TextView mTextView;
             protected CardView mCardView;
             protected ImageView mImageView;
@@ -204,11 +204,11 @@ public class CardsRecyclerView extends RecyclerView {
         return colorSet[random];
     }
 
-    interface CardClickListener {
+    public interface CardClickListener {
         public void onCardClick(View view, int position);
     }
 
-    interface CardLongClickListener{
+    public interface CardLongClickListener{
         public void onCardLongCLick(View view, int position);
     }
 
